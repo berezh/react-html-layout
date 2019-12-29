@@ -14,6 +14,8 @@ Basic react page layout.
 npm install react-html-layout
 ```
 
+**<a href="http://react-html-layout.vimbat.com">LIVE DEMO</a>**
+
 ### Make sure you have next styles
 
 Some browsers have default styles for `html` or `body` tags. We should be sure that below tags have:
