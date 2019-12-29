@@ -1,0 +1,21 @@
+html,
+body,
+#root {
+  display: flex;
+  flex: 1;
+}
+
+.master-page {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  &__sidebar {
+    width: 250px;
+    background-color: rgb(226, 226, 226);
+    box-shadow: -5px 0 10px #888 inset;
+  }
+  &__content {
+    flex: 1;
+    overflow: auto;
+  }
+}
