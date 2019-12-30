@@ -6,9 +6,7 @@ Basic react page layout.
     <img src="https://nodei.co/npm/react-html-layout.png?mini=true"/>
 </a>
 
-**<a href="http://react-html-layout.vimbat.com">
-LIVE DEMO
-</a>**
+### [LIVE DEMO](http://react-html-layout.vimbat.com)
 
 ## Usage
 

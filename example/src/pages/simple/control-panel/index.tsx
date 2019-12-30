@@ -122,7 +122,7 @@ export const ControlPanel: React.FC<Props> = props => {
             <Switch checked={hasHeader} label="Has Header" onChange={handleHasHeader} />
             <Switch checked={hasFooter} label="Has Footer" onChange={handleHasFooter} />
             <Switch checked={hasContentText} label="Has Content Text" onChange={handleHasContentText} />
-            <Switch checked={hasLeftSidebar} label="Has Text" onChange={handleHasLeftSidebar} />
+            <Switch checked={hasLeftSidebar} label="Has Left Sidebar" onChange={handleHasLeftSidebar} />
             <p>
                 <Switch
                     disabled={!hasLeftSidebar}
