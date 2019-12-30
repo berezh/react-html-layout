@@ -1,14 +1,14 @@
 import React, { useState, useCallback } from 'react';
 
 import { Layout } from '../../react-html-layout';
-import { Content } from '../../components';
+import { Content, SidebarContent } from '../../components';
 import { ControlOptions, ControlPanel } from './control-panel';
 
 import './index.scss';
 import { MasterPage } from '../../components/master-page';
 
 const sidebarStyle: React.CSSProperties = {
-    width: 200,
+    width: 250,
     backgroundColor: '#ccc',
 };
 
@@ -50,9 +50,9 @@ export const SimplePage: React.FC = props => {
             <Layout
                 header={hasHeader ? 'Layout Demo' : undefined}
                 footer={hasFooter ? 'Footer' : undefined}
-                leftSidebar={hasLeftSidebar ? hasLeftSidebarText ? <Content /> : 'Left Sidebar' : undefined}
+                leftSidebar={hasLeftSidebar ? hasLeftSidebarText ? <SidebarContent /> : 'Left Sidebar' : undefined}
                 leftSidebarStyle={sidebarStyle}
-                rightSidebar={hasRightSidebar ? hasRightSidebarText ? <Content /> : 'Right Sidebar' : undefined}
+                rightSidebar={hasRightSidebar ? hasRightSidebarText ? <SidebarContent /> : 'Right Sidebar' : undefined}
                 rightSidebarStyle={sidebarStyle}
                 {...layoutOptions}
             >
