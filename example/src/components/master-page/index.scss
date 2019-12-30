@@ -1,14 +1,29 @@
-.control-panel {
+.control-panel,
+.navigator {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
     z-index: 100;
     background-color: rgb(240, 240, 240);
-    border-radius: 0 5px 5px 0;
     box-shadow: 0 0 10px #888;
     padding: 10px;
+}
+
+.navigator {
+    font-size: 16px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    > a {
+        margin: 5px 0;
+        font-weight: bold;
+    }
+}
+
+.control-panel {
+    left: 0;
     font-size: 12px;
+    border-radius: 0 5px 5px 0;
     &__content {
         > b {
             font-weight: bold;
@@ -19,7 +34,9 @@
             display: block;
             margin: 8px 0;
         }
-        > div {
+        > p {
+            padding: 0;
+            margin: 0;
             padding-left: 20px;
         }
     }

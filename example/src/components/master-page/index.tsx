@@ -1,13 +1,13 @@
 import React from 'react';
 import './index.scss';
+import { Link } from 'react-router-dom';
 
 interface Props {
     controlPanel?: React.ReactNode;
-    navigator?: React.ReactNode;
 }
 
 export const MasterPage: React.FC<Props> = props => {
-    const { children, controlPanel, navigator } = props;
+    const { children, controlPanel } = props;
     return (
         <React.Fragment>
             <React.Fragment>
@@ -18,7 +18,13 @@ export const MasterPage: React.FC<Props> = props => {
                 ) : null}
             </React.Fragment>
             <React.Fragment>{children}</React.Fragment>
-            <React.Fragment>{navigator ? <div className="navigator">{navigator}</div> : null}</React.Fragment>
+            <React.Fragment>
+                <div className="navigator">
+                    <Link to="/">Layout</Link>
+                    <Link to="/content">ContentWidth</Link>
+                    <Link to="/default">Default Layout View</Link>
+                </div>
+            </React.Fragment>
         </React.Fragment>
     );
 };

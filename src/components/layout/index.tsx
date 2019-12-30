@@ -123,17 +123,23 @@ export const Layout: React.FC<LayoutProps> = props => {
         simpleFooter = footerNode;
     }
 
-    const rootContentStyle: React.CSSProperties = {};
+    // const rootContentStyle: React.CSSProperties = {};
     const fixedSidebarStyle: React.CSSProperties = {};
     const notFixSideContent: React.CSSProperties = {};
+    const contentWrapperStyle: React.CSSProperties = {};
     const contentStyle: React.CSSProperties = {};
 
     if (showFixedSidebar) {
         fixedSidebarStyle.overflow = 'auto';
-        contentStyle.overflowY = 'auto';
-        contentStyle.msOverflowY = 'auto';
-        rootContentStyle.display = 'flex';
-        rootContentStyle.flex = 1;
+        // rootContentStyle.display = 'flex';
+        // rootContentStyle.flex = 1;
+        if (showFixedFooter) {
+            contentStyle.overflowY = 'auto';
+            contentStyle.msOverflowY = 'auto';
+        } else {
+            contentWrapperStyle.display = 'flex';
+            contentStyle.flex = 1;
+        }
     } else {
         notFixSideContent.overflowY = 'auto';
         notFixSideContent.msOverflowY = 'auto';
@@ -142,7 +148,7 @@ export const Layout: React.FC<LayoutProps> = props => {
     return (
         <div style={{ ...rootStyle, ...style }} className={className}>
             {fixedHeader}
-            <div style={{ flexDirection: 'column', overflow: 'auto', ...rootContentStyle }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'auto' }}>
                 {simpleHeader}
                 <div
                     style={{
@@ -156,7 +162,7 @@ export const Layout: React.FC<LayoutProps> = props => {
                     {leftSidebar ? (
                         <Sidebar style={{ ...fixedSidebarStyle, ...leftSidebarStyle }}>{leftSidebar}</Sidebar>
                     ) : null}
-                    <div style={{ flex: 1, flexDirection: 'column', ...fixedSidebarStyle }}>
+                    <div style={{ flex: 1, flexDirection: 'column', ...fixedSidebarStyle, ...contentWrapperStyle }}>
                         {contentHeader}
                         <div style={contentStyle}>{contextElement}</div>
                         {contentFooter}

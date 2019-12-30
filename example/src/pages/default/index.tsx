@@ -1,11 +1,14 @@
 import React from 'react';
 import './index.scss';
 import { Layout } from '../../react-html-layout';
+import { MasterPage } from '../../components/master-page';
 
 export const DefaultPage: React.FC = props => {
     return (
-        <Layout header="Header" footer="Footer" fixedHeader={true} fixedSidebar={true} leftSidebar="Left Sidebar" rightSidebar="Right Sidebar">
-            Content
-        </Layout>
+        <MasterPage>
+            <Layout header="Header" footer="Footer" leftSidebar="Left Sidebar" rightSidebar="Right Sidebar">
+                Content
+            </Layout>
+        </MasterPage>
     );
 };

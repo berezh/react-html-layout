@@ -16,20 +16,20 @@ export const SimplePage: React.FC = props => {
     const [options, setOptions] = useState<ControlOptions>({
         fixedHeader: true,
         fixedFooter: true,
-        fixedSidebar: false,
+        fixedSidebar: true,
         //
         hasHeader: true,
         hasFooter: true,
         hasContentText: true,
         hasLeftSidebar: true,
-        hasLeftSidebarText: false,
+        hasLeftSidebarText: true,
         hasRightSidebar: true,
-        hasRightSidebarText: false,
+        hasRightSidebarText: true,
     });
 
     const handleOptions = useCallback(
         options => {
-            setOptions(options);
+            setOptions({ ...options });
         },
         [options],
     );
