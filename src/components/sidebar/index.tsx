@@ -12,7 +12,6 @@ export const Sidebar: React.FC<Props> = ({ style, children }) => {
             // height: 50,
             color: 'black',
             width: 150,
-            height: '100%',
             padding: 5,
             ...style,
         };

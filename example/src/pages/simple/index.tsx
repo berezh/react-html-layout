@@ -7,14 +7,19 @@ import { ControlOptions, ControlPanel } from './control-panel';
 import './index.scss';
 import { MasterPage } from '../../components/master-page';
 
-const sidebarWidth = 200;
+const sidebarStyle: React.CSSProperties = {
+    width: 200,
+    backgroundColor: '#ccc',
+};
 
 export const SimplePage: React.FC = props => {
     const [options, setOptions] = useState<ControlOptions>({
         fixedHeader: true,
         fixedFooter: true,
-        fixedSidebar: true,
+        fixedSidebar: false,
         //
+        hasHeader: true,
+        hasFooter: true,
         hasContentText: true,
         hasLeftSidebar: true,
         hasLeftSidebarText: false,
@@ -30,6 +35,8 @@ export const SimplePage: React.FC = props => {
     );
 
     const {
+        hasHeader,
+        hasFooter,
         hasLeftSidebar,
         hasLeftSidebarText,
         hasRightSidebar,
@@ -41,12 +48,12 @@ export const SimplePage: React.FC = props => {
     return (
         <MasterPage controlPanel={<ControlPanel {...options} onChange={handleOptions} />}>
             <Layout
-                header={'Header'}
-                footer={'Footer'}
+                header={hasHeader ? 'Header' : undefined}
+                footer={hasFooter ? 'Footer' : undefined}
                 leftSidebar={hasLeftSidebar ? hasLeftSidebarText ? <Content /> : 'Left Sidebar' : undefined}
-                leftSidebarStyle={{ width: sidebarWidth }}
+                leftSidebarStyle={sidebarStyle}
                 rightSidebar={hasRightSidebar ? hasRightSidebarText ? <Content /> : 'Right Sidebar' : undefined}
-                rightSidebarStyle={{ width: sidebarWidth }}
+                rightSidebarStyle={sidebarStyle}
                 {...layoutOptions}
             >
                 {hasContentText ? <Content /> : 'Content'}

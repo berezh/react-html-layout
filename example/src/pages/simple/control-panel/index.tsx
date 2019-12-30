@@ -9,6 +9,8 @@ export interface ControlOptions {
     fixedFooter: boolean;
     fixedSidebar: boolean;
     // content -------------------------
+    hasHeader: boolean;
+    hasFooter: boolean;
     hasContentText: boolean;
     hasLeftSidebar: boolean;
     hasLeftSidebarText: boolean;
@@ -26,6 +28,9 @@ export const ControlPanel: React.FC<Props> = props => {
         fixedHeader,
         fixedFooter,
         fixedSidebar,
+        // content -------------------------
+        hasHeader,
+        hasFooter,
         hasContentText,
         hasLeftSidebar,
         hasLeftSidebarText,
@@ -53,6 +58,24 @@ export const ControlPanel: React.FC<Props> = props => {
         },
         [props],
     );
+
+    // content -----------------------------------------------------------
+
+    const handleHasHeader = useInputCheckboxCallback(
+        checked => {
+            onChange({ ...props, hasHeader: checked });
+        },
+        [props],
+    );
+
+    const handleHasFooter = useInputCheckboxCallback(
+        checked => {
+            onChange({ ...props, hasFooter: checked });
+        },
+        [props],
+    );
+
+    // content -----------------------------------------------------------
 
     const handleHasContentText = useInputCheckboxCallback(
         checked => {
@@ -96,8 +119,10 @@ export const ControlPanel: React.FC<Props> = props => {
             <Switch checked={fixedFooter} label="fixedFooter" onChange={handleFixedFooter} />
             <Switch checked={fixedSidebar} label="fixedSidebar" onChange={handleFixedSidebar} />
             <b>Content</b>
-            <Switch checked={hasContentText} label="Has Content Text" onChange={handleHasContentText} />
-            <Switch checked={hasLeftSidebar} label="Has Left Sidebar" onChange={handleHasLeftSidebar} />
+            <Switch checked={hasHeader} label="Has Header" onChange={handleHasHeader} />
+            <Switch checked={hasFooter} label="Has Footer" onChange={handleHasFooter} />
+            <Switch checked={fixedSidebar} label="fixedSidebar" onChange={handleFixedSidebar} />
+            <Switch checked={fixedSidebar} label="fixedSidebar" onChange={handleFixedSidebar} />
             <div>
                 <Switch
                     disabled={!hasLeftSidebar}

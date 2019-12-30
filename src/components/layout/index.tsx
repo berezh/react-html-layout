@@ -123,13 +123,17 @@ export const Layout: React.FC<LayoutProps> = props => {
         simpleFooter = footerNode;
     }
 
+    const rootContentStyle: React.CSSProperties = {};
     const fixedSidebarStyle: React.CSSProperties = {};
-    const fixedSidebarInnerContent: React.CSSProperties = {};
     const notFixSideContent: React.CSSProperties = {};
+    const contentStyle: React.CSSProperties = {};
+
     if (showFixedSidebar) {
         fixedSidebarStyle.overflow = 'auto';
-        fixedSidebarInnerContent.overflowY = 'auto';
-        fixedSidebarInnerContent.msOverflowY = 'auto';
+        contentStyle.overflowY = 'auto';
+        contentStyle.msOverflowY = 'auto';
+        rootContentStyle.display = 'flex';
+        rootContentStyle.flex = 1;
     } else {
         notFixSideContent.overflowY = 'auto';
         notFixSideContent.msOverflowY = 'auto';
@@ -138,7 +142,7 @@ export const Layout: React.FC<LayoutProps> = props => {
     return (
         <div style={{ ...rootStyle, ...style }} className={className}>
             {fixedHeader}
-            <div style={{ display: 'flex', flex: 1, flexDirection: 'column', overflow: 'auto' }}>
+            <div style={{ flexDirection: 'column', overflow: 'auto', ...rootContentStyle }}>
                 {simpleHeader}
                 <div
                     style={{
@@ -154,7 +158,7 @@ export const Layout: React.FC<LayoutProps> = props => {
                     ) : null}
                     <div style={{ flex: 1, flexDirection: 'column', ...fixedSidebarStyle }}>
                         {contentHeader}
-                        <div style={fixedSidebarInnerContent}>{contextElement}</div>
+                        <div style={contentStyle}>{contextElement}</div>
                         {contentFooter}
                     </div>
                     {rightSidebar ? (
