@@ -2,18 +2,23 @@ import React from 'react';
 import './index.scss';
 
 interface Props {
-    children: React.ReactNode;
-    sidebar: React.ReactNode;
+    controlPanel?: React.ReactNode;
+    navigator?: React.ReactNode;
 }
 
-export class MasterPage extends React.PureComponent<Props> {
-    public render(): React.ReactNode {
-        const { children, sidebar } = this.props;
-        return (
-            <div className="master-page">
-                <div className="master-page__sidebar">{sidebar}</div>
-                <div className="master-page__content">{children}</div>
-            </div>
-        );
-    }
-}
+export const MasterPage: React.FC<Props> = props => {
+    const { children, controlPanel, navigator } = props;
+    return (
+        <React.Fragment>
+            <React.Fragment>
+                {controlPanel ? (
+                    <div className="control-panel">
+                        <div className="control-panel__content">{controlPanel}</div>
+                    </div>
+                ) : null}
+            </React.Fragment>
+            <React.Fragment>{children}</React.Fragment>
+            <React.Fragment>{navigator ? <div className="navigator">{navigator}</div> : null}</React.Fragment>
+        </React.Fragment>
+    );
+};

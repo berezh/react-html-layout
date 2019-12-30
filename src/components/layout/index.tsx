@@ -150,9 +150,7 @@ export const Layout: React.FC<LayoutProps> = props => {
                     }}
                 >
                     {leftSidebar ? (
-                        <div style={{ ...fixedSidebarStyle, ...leftSidebarStyle }}>
-                            <Sidebar>{leftSidebar}</Sidebar>
-                        </div>
+                        <Sidebar style={{ ...fixedSidebarStyle, ...leftSidebarStyle }}>{leftSidebar}</Sidebar>
                     ) : null}
                     <div style={{ flex: 1, flexDirection: 'column', ...fixedSidebarStyle }}>
                         {contentHeader}
@@ -160,9 +158,7 @@ export const Layout: React.FC<LayoutProps> = props => {
                         {contentFooter}
                     </div>
                     {rightSidebar ? (
-                        <div style={{ ...fixedSidebarStyle, ...rightSidebarStyle }}>
-                            <Sidebar>{rightSidebar}</Sidebar>
-                        </div>
+                        <Sidebar style={{ ...fixedSidebarStyle, ...rightSidebarStyle }}>{rightSidebar}</Sidebar>
                     ) : null}
                 </div>
                 {simpleFooter}

@@ -1,19 +1,22 @@
 import React from 'react';
 
-const defaultStyle: React.CSSProperties = {
-    backgroundColor: '#ccc',
-    // height: 50,
-    color: 'black',
-    width: 150,
-    height: '100%',
-};
+interface Props {
+    style: React.CSSProperties;
+}
 
-export const Sidebar: React.FC = ({ children }) => {
-    return typeof children === 'string' ? (
-        <div style={defaultStyle}>
-            <div style={{ padding: 10 }}>{children}</div>
-        </div>
-    ) : (
-        <React.Fragment>{children}</React.Fragment>
-    );
+export const Sidebar: React.FC<Props> = ({ style, children }) => {
+    let newStle = style;
+    if (typeof children === 'string') {
+        newStle = {
+            backgroundColor: '#ccc',
+            // height: 50,
+            color: 'black',
+            width: 150,
+            height: '100%',
+            padding: 5,
+            ...style,
+        };
+    }
+
+    return <div style={newStle}>{children}</div>;
 };
