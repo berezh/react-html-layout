@@ -3,7 +3,7 @@
 Basic react page layout.
 
 <a href="https://www.npmjs.com/package/react-html-layout">
-    <img src="https://nodei.co/npm/react-html-layout.png?mini=true">
+    <img src="https://nodei.co/npm/react-html-layout.png?mini=true"/>
 </a>
 
 **<a href="http://react-html-layout.vimbat.com">

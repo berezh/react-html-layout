@@ -6,7 +6,7 @@ import { MasterPage } from '../../components/master-page';
 export const DefaultPage: React.FC = props => {
     return (
         <MasterPage>
-            <Layout header="Header" footer="Footer" leftSidebar="Left Sidebar" rightSidebar="Right Sidebar">
+            <Layout header="Default Layout View" footer="Footer" leftSidebar="Left Sidebar" rightSidebar="Right Sidebar">
                 Content
             </Layout>
         </MasterPage>

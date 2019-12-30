@@ -48,7 +48,7 @@ export const SimplePage: React.FC = props => {
     return (
         <MasterPage controlPanel={<ControlPanel {...options} onChange={handleOptions} />}>
             <Layout
-                header={hasHeader ? 'Header' : undefined}
+                header={hasHeader ? 'Layout Demo' : undefined}
                 footer={hasFooter ? 'Footer' : undefined}
                 leftSidebar={hasLeftSidebar ? hasLeftSidebarText ? <Content /> : 'Left Sidebar' : undefined}
                 leftSidebarStyle={sidebarStyle}

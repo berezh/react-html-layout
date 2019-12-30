@@ -23,6 +23,9 @@ export const MasterPage: React.FC<Props> = props => {
                     <Link to="/">Layout</Link>
                     <Link to="/content">ContentWidth</Link>
                     <Link to="/default">Default Layout View</Link>
+                    <a href="https://www.npmjs.com/package/react-html-layout">
+                        <img src="https://nodei.co/npm/react-html-layout.png?mini=true" />
+                    </a>
                 </div>
             </React.Fragment>
         </React.Fragment>
