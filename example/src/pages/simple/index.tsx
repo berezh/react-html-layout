@@ -15,8 +15,8 @@ const sidebarStyle: React.CSSProperties = {
 export const SimplePage: React.FC = props => {
     const [options, setOptions] = useState<ControlOptions>({
         fixedHeader: true,
-        fixedFooter: false,
-        fixedSidebar: false,
+        fixedFooter: true,
+        fixedSidebar: true,
         //
         hasHeader: true,
         hasFooter: true,

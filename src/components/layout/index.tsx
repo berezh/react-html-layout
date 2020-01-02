@@ -123,14 +123,12 @@ export const Layout: React.FC<LayoutProps> = props => {
         simpleFooter = footerNode;
     }
 
-    const content1Style: React.CSSProperties = {};
     const content2Style: React.CSSProperties = {};
     const content3Style: React.CSSProperties = {};
     const fixedSidebarStyle: React.CSSProperties = {};
     const contentBottomStyle: React.CSSProperties = {};
 
     if (showFixedSidebar) {
-        content1Style.display = 'flex';
         content2Style.flex = 1;
         fixedSidebarStyle.overflow = 'auto';
         if (showFixedFooter) {
@@ -151,40 +149,50 @@ export const Layout: React.FC<LayoutProps> = props => {
             <div
                 style={{
                     flex: 1,
+                    display: 'flex',
                     flexDirection: 'column',
-                    overflow: 'auto',
-                    ...content1Style,
+                    overflow: 'auto'
                 }}
             >
-                {simpleHeader}
                 <div
                     style={{
+                        flex: 1,
                         display: 'flex',
-                        flexDirection: 'row',
+                        flexDirection: 'column',
                         ...fixedSidebarStyle,
-                        ...content2Style,
                     }}
                 >
-                    {leftSidebar ? (
-                        <Sidebar style={{ ...fixedSidebarStyle, ...leftSidebarStyle }}>{leftSidebar}</Sidebar>
-                    ) : null}
+                    {simpleHeader}
                     <div
                         style={{
                             flex: 1,
-                            flexDirection: 'column',
+                            display: 'flex',
+                            flexDirection: 'row',
                             ...fixedSidebarStyle,
-                            ...content3Style,
+                            ...content2Style,
                         }}
                     >
-                        {contentHeader}
-                        <div style={contentBottomStyle}>{contextElement}</div>
-                        {contentFooter}
+                        {leftSidebar ? (
+                            <Sidebar style={{ ...fixedSidebarStyle, ...leftSidebarStyle }}>{leftSidebar}</Sidebar>
+                        ) : null}
+                        <div
+                            style={{
+                                flex: 1,
+                                flexDirection: 'column',
+                                ...fixedSidebarStyle,
+                                ...content3Style,
+                            }}
+                        >
+                            {contentHeader}
+                            <div style={contentBottomStyle}>{contextElement}</div>
+                            {contentFooter}
+                        </div>
+                        {rightSidebar ? (
+                            <Sidebar style={{ ...fixedSidebarStyle, ...rightSidebarStyle }}>{rightSidebar}</Sidebar>
+                        ) : null}
                     </div>
-                    {rightSidebar ? (
-                        <Sidebar style={{ ...fixedSidebarStyle, ...rightSidebarStyle }}>{rightSidebar}</Sidebar>
-                    ) : null}
+                    {simpleFooter}
                 </div>
-                {simpleFooter}
             </div>
             {fixedFooter}
         </div>
