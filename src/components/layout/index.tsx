@@ -123,48 +123,61 @@ export const Layout: React.FC<LayoutProps> = props => {
         simpleFooter = footerNode;
     }
 
-    // const rootContentStyle: React.CSSProperties = {};
+    const content1Style: React.CSSProperties = {};
+    const content2Style: React.CSSProperties = {};
+    const content3Style: React.CSSProperties = {};
     const fixedSidebarStyle: React.CSSProperties = {};
-    const notFixSideContent: React.CSSProperties = {};
-    const contentWrapperStyle: React.CSSProperties = {};
-    const contentStyle: React.CSSProperties = {};
+    const contentBottomStyle: React.CSSProperties = {};
 
     if (showFixedSidebar) {
+        content1Style.display = 'flex';
+        content2Style.flex = 1;
         fixedSidebarStyle.overflow = 'auto';
-        // rootContentStyle.display = 'flex';
-        // rootContentStyle.flex = 1;
         if (showFixedFooter) {
-            contentStyle.overflowY = 'auto';
-            contentStyle.msOverflowY = 'auto';
+            contentBottomStyle.overflowY = 'auto';
+            contentBottomStyle.msOverflowY = 'auto';
         } else {
-            contentWrapperStyle.display = 'flex';
-            contentStyle.flex = 1;
+            content3Style.display = 'flex';
+            contentBottomStyle.flex = 1;
         }
     } else {
-        notFixSideContent.overflowY = 'auto';
-        notFixSideContent.msOverflowY = 'auto';
+        content2Style.overflowY = 'auto';
+        content2Style.msOverflowY = 'auto';
     }
 
     return (
         <div style={{ ...rootStyle, ...style }} className={className}>
             {fixedHeader}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'auto' }}>
+            <div
+                style={{
+                    flex: 1,
+                    flexDirection: 'column',
+                    overflow: 'auto',
+                    ...content1Style,
+                }}
+            >
                 {simpleHeader}
                 <div
                     style={{
-                        flex: 1,
                         display: 'flex',
                         flexDirection: 'row',
                         ...fixedSidebarStyle,
-                        ...notFixSideContent,
+                        ...content2Style,
                     }}
                 >
                     {leftSidebar ? (
                         <Sidebar style={{ ...fixedSidebarStyle, ...leftSidebarStyle }}>{leftSidebar}</Sidebar>
                     ) : null}
-                    <div style={{ flex: 1, flexDirection: 'column', ...fixedSidebarStyle, ...contentWrapperStyle }}>
+                    <div
+                        style={{
+                            flex: 1,
+                            flexDirection: 'column',
+                            ...fixedSidebarStyle,
+                            ...content3Style,
+                        }}
+                    >
                         {contentHeader}
-                        <div style={contentStyle}>{contextElement}</div>
+                        <div style={contentBottomStyle}>{contextElement}</div>
                         {contentFooter}
                     </div>
                     {rightSidebar ? (
