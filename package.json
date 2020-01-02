@@ -1,6 +1,6 @@
 {
     "name": "react-html-layout",
-    "version": "2.1.3",
+    "version": "2.1.5",
     "description": "Basic react page layout",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
