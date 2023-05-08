@@ -2,3 +2,4 @@ node_modules
 dist
 reactComponentLib
 example/src/react-html-layout
+example
