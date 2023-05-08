@@ -6,8 +6,6 @@ Basic react page layout.
     <img src="https://nodei.co/npm/react-html-layout.png?mini=true"/>
 </a>
 
-## [LIVE DEMO](http://react-html-layout.vimbat.com)
-
 ## Usage
 
 ### Installation:
@@ -23,15 +21,15 @@ Some browsers have default styles for `html` or `body` tags. We should be sure t
 ```css
 html,
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 ```
 
 ## Glossary
 
--   [Layout](#layout)
--   [ContentWrapper](#contentwrapper)
+- [Layout](#layout)
+- [ContentWrapper](#contentwrapper)
 
 ## Layout
 
@@ -51,28 +49,28 @@ import { Layout } from 'react-html-layout';
     <img style="width:400px" src='./images/layout.png'>
 </div>
 
--   `header`, `footer`, `leftSidebar`, `rightSidebar` contains default styles if content has `string` type.
--   Layout occupies whole visible page space, that's because it's heigth is `100vh`.
--   To make `header` fixed, set `fixedHeader` to `true`.
--   To make `footer` fixed, set `fixedFooter` to `true`.
--   To make `leftSidebar` and/or `rightSidebar` fixed, set `fixedSidebar` to `true`.
+- `header`, `footer`, `leftSidebar`, `rightSidebar` contains default styles if content has `string` type.
+- Layout occupies whole visible page space, that's because it's height is `100vh`.
+- To make `header` fixed, set `fixedHeader` to `true`.
+- To make `footer` fixed, set `fixedFooter` to `true`.
+- To make `leftSidebar` and/or `rightSidebar` fixed, set `fixedSidebar` to `true`.
 
 ### Options
 
-| Name                  | type                  | Description                                             |
-| --------------------- | --------------------- | ------------------------------------------------------- |
-| `className`           | `string`              | Root class name                                         |
-| `style`               | `React.CSSProperties` | Root style                                              |
-| `header`              | `React.ReactNode`     | Header content.                                         |
-| `fixedHeader`         | `boolean`             | Toggles `header` to be fixed                            |
-| `footer`              | `React.ReactNode`     | Footer content.                                         |
-| `fixedFooter`         | `boolean`             | Toggles `footer` to be fixed                            |
-| `leftSidebar`         | `React.ReactNode`     | Left Sidebar content                                    |
-| `leftSidebarStyle`    | `React.CSSProperties` | Left Sidebar style                                      |
-| `rightSidebar`        | `React.ReactNode`     | Right Sidebar content                                   |
-| `rightSidebarStyle`   | `React.CSSProperties` | Right Sidebar style                                     |
-| `fixedSidebar`        | `boolean`             | Toggles `leftSidebar` or/and `rightSidebar` to be fixed |
-| `content`, `children` | `React.ReactNode`     | Content of the page                                     |
+| Name                  | type            | Description                                             |
+| --------------------- | --------------- | ------------------------------------------------------- |
+| `className`           | `string`        | Root class name                                         |
+| `style`               | `CSSProperties` | Root style                                              |
+| `header`              | `ReactNode`     | Header content.                                         |
+| `fixedHeader`         | `boolean`       | Toggles `header` to be fixed                            |
+| `footer`              | `ReactNode`     | Footer content.                                         |
+| `fixedFooter`         | `boolean`       | Toggles `footer` to be fixed                            |
+| `leftSidebar`         | `ReactNode`     | Left Sidebar content                                    |
+| `leftSidebarStyle`    | `CSSProperties` | Left Sidebar style                                      |
+| `rightSidebar`        | `ReactNode`     | Right Sidebar content                                   |
+| `rightSidebarStyle`   | `CSSProperties` | Right Sidebar style                                     |
+| `fixedSidebar`        | `boolean`       | Toggles `leftSidebar` or/and `rightSidebar` to be fixed |
+| `content`, `children` | `ReactNode`     | Content of the page                                     |
 
 ## ContentWrapper
 
@@ -92,7 +90,7 @@ import { ContentWrapper } from 'react-html-layout';
 
 ### Options
 
-| Name       | type              | Description                |
-| ---------- | ----------------- | -------------------------- |
-| `width`    | `number`          | Heigth of the fixed header |
-| `children` | `React.ReactNode` | Content                    |
+| Name       | type        | Description          |
+| ---------- | ----------- | -------------------- |
+| `width`    | `number`    | Width of the content |
+| `children` | `ReactNode` | Content              |

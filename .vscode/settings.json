@@ -3,5 +3,15 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
-    "eslint.validate": ["typescript", "typescriptreact", "javascript", "javascriptreact", "markdown", "json"],
+    "eslint.validate": [
+      "typescript",
+      "typescriptreact",
+      "javascript",
+      "javascriptreact",
+      "markdown",
+      "json"
+    ],
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
